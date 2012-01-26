@@ -1,0 +1,12 @@
+{
+  "name": "GitHub Twitter Share Button",
+  "version": "1.0",
+  "description": "Adds a Tweet button to any GitHub repo index page.",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["jquery.js", "twitter_button.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
