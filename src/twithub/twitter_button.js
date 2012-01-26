@@ -1,15 +1,14 @@
 $(function(){
 	if(!document.location.href.match(/^https:\/\/github.com\/\w+\/\w+\/?$/i)) return;
-	shortened_url_length = 21
+	shortened_url_length = 21;
 	description = $("#repository_description p").children().remove().end().text().trim();
 	title = $('.title-actions-bar strong').text();
 	url = $('#slider .breadcrumb a').eq(0).attr('href');
 
 	if(title.length + description.length > 117)
-		description = description.substr(0, 117 - title.length - 2) + '…'
+		description = description.substr(0, 117 - title.length - 2) + '…';
 
 	tweet = title + ": " + description + " https://github.com" + url;
-	console.log(tweet);
 	link = $('<a class="minibutton btn-fork" rel="nofollow" target="_blank"><span><span class="icon"></span>Tweet</span></a>');
 	link.attr('href', "http://twitter.com/home?status=" + encodeURI(tweet));
 	$(".icon", link).css({
